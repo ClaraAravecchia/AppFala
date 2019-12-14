@@ -1,0 +1,198 @@
+
+
+
+<CustLabel@Label>
+	font_size: 24
+	color: 0, .8, .8, 1
+
+<BotaoBranco@Button>:
+	id: botao
+	font_size: 20
+	color: 1, 1, 1, 1
+
+<Botao5@Button>:
+	id: botao
+	font_size: 20
+	color: 1, 1, 1, 1
+	size_hint_x: .8
+
+<Botao3@Button>:
+	id: botao
+	font_size: 20
+	color: 1, 1, 1, 1
+	size_hint_x: 1.34
+
+<BotaoPositivo@Button>:
+	id: botao
+	font_size: 25
+	color: 0, 1, 0, 1
+
+<BotaoNegativo@Button>:
+	id: botao
+	font_size: 25
+	color: 1, 0, 0, 1
+
+<SampBoxLayout>:
+	id: samp
+	orientation: "vertical"
+	padding: 10, 10
+	spacing: 10, 10
+	BoxLayout:
+		orientation: "horizontal"
+		height: 30
+		BoxLayout:
+			TabbedPanel:
+				do_default_tab: False
+							
+				TabbedPanelItem:
+					text: "1st Tab"
+					BoxLayout:
+						orientation: "vertical"
+
+						BoxLayout:
+							CustLabel:
+								text: "Cumprimentos"
+							Botao5:
+								text: "BOM DIA"
+								on_press: root.dia()
+							Botao5:
+								text: "BOA TARDE"
+								on_press: root.tarde()
+							Botao5:
+								text: "BOA NOITE"
+								on_press: root.noite()
+							Botao5:
+								text: "Oi"
+								on_press: root.oi()
+							Botao5:
+								text: "Tchau"
+								on_press: root.tchau()
+
+						BoxLayout:
+							CustLabel:
+								#size_hint_x: .5
+								text: "QUERO:"
+							Botao5:
+								text: "BRINCAR"
+								on_press: root.brincar()
+							Botao5:
+								text: "IR AO \nBANHEIRO"
+								on_press: root.banheiro()
+							Botao5:
+								text: "DORMIR"
+								on_press: root.dormir()
+							Botao5:
+								text: "COMER"
+								on_press: root.comer()
+							Botao5:
+								text: "AJUDA"
+								on_press: root.ajuda()
+
+						BoxLayout:
+							CustLabel:
+								text: "ESTOU COM:"
+							BotaoBranco:
+								text: "SEDE"
+								on_press: root.sede()
+							BotaoBranco:
+								text: "FOME"
+								on_press: root.fome()
+							BotaoBranco:
+								text: "SONO"
+								on_press: root.sono()
+							BotaoBranco:
+								text: "DOR"
+								on_press: root.dor()
+
+						BoxLayout:
+							CustLabel:
+								text: "DIREÇÃO:"
+							BotaoBranco:
+								text: "ESQUERDA <--"
+								on_press: root.esquerda()
+							BotaoBranco:
+								text: "DIREITA -->"
+								on_press: root.direita()
+							BotaoBranco:
+								text: "PRA CIMA"
+								on_press: root.cima()
+							BotaoBranco:
+								text: "PRA BAIXO"
+								on_press: root.baixo()
+
+
+						BoxLayout:
+							CustLabel:
+								text: "GENTILEZA"
+							Botao3:
+								text: "POR FAVOR"
+								on_press: root.porfavor()
+							Botao3:
+								text: "OBRIGADO"
+								on_press: root.obg()
+							Botao3:
+								text: "COM LICENÇA"
+								on_press: root.licenca()
+
+						BoxLayout:
+							CustLabel:
+								size_hint_x: .5
+								text: "ESTOU:"
+							BotaoPositivo:
+								text: "FELIZ \n=)"
+								on_press: root.feliz()
+							BotaoNegativo:
+								text: "TRISTE \n=("
+								on_press: root.triste()
+	
+
+						BoxLayout:
+							CustLabel:
+								size_hint_x: .5
+								text: "DECISÃO:"
+							BotaoPositivo:
+								text: "SIM"
+								on_press: root.sim()
+							BotaoNegativo:
+								text: "NÃO"
+								on_press: root.nao()
+	
+				TabbedPanelItem:
+					text: "2nd Tab"
+					#on_press: root.show_keyboard()
+					BoxLayout:
+						orientation: "horizontal"
+						size_hint_y: .15
+
+						BoxLayout:
+							orientation: "horizontal"
+							size_hint_x: .25
+
+							TextInput:
+								id: entry
+								focus: True
+								font_size: 30
+								#on_focus: root.show_keyboard()
+								multiline: True
+
+						BoxLayout:
+							orientation: "horizontal"
+							size_hint_x: .1
+							Button:
+								text: "FALAR"
+								font_size: 30
+								on_press: root.strSpeak(entry.text)
+								on_release: entry.text = ""
+
+				TabbedPanelItem:
+					text: "3rd Tab"
+					id: "tab"
+					BoxLayout:
+						orientation: "horizontal"
+						size_hint_x: .8
+						Bind:
+							canvas:
+								Color: 
+									rgba: 0, 0, 0, 1
+	
+									
